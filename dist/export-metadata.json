@@ -1,0 +1,206 @@
+{
+  "units": "metres",
+  "coordinates": "glTF x = Blender x; glTF y = Blender z; glTF z = -Blender y",
+  "toneMapping": "NoToneMapping",
+  "textureEncoding": "sRGB, AgX Medium High Contrast display transform baked into texture pixels",
+  "lighting": "static Cycles combined lighting baked; viewer should not relight unlit materials",
+  "room_dimensions_m": [
+    2.54,
+    3.3782,
+    2.921
+  ],
+  "booth_bounds_m": [
+    [
+      0.57,
+      1.97
+    ],
+    [
+      1.95,
+      2.6
+    ],
+    [
+      0,
+      0.95
+    ]
+  ],
+  "new_plant_pots": [
+    {
+      "x": 0.19,
+      "depth": 0.24,
+      "base": 0,
+      "radius": 0.12,
+      "height": 0.25
+    },
+    {
+      "x": 0.2,
+      "depth": 0.94,
+      "base": 0.67,
+      "radius": 0.09,
+      "height": 0.16
+    }
+  ],
+  "atlases": [
+    {
+      "group": "architecture",
+      "resolution": 2048,
+      "objects": 1,
+      "seconds": 0.0,
+      "reused_compatible_atlas": true
+    },
+    {
+      "group": "booth",
+      "resolution": 2048,
+      "objects": 1,
+      "seconds": 142.8,
+      "reused_compatible_atlas": false
+    },
+    {
+      "group": "equipment",
+      "resolution": 2048,
+      "objects": 1,
+      "seconds": 0.1,
+      "reused_compatible_atlas": true
+    },
+    {
+      "group": "plants",
+      "resolution": 2048,
+      "objects": 1,
+      "seconds": 0.0,
+      "reused_compatible_atlas": true
+    },
+    {
+      "group": "decor",
+      "resolution": 2048,
+      "objects": 1,
+      "seconds": 0.0,
+      "reused_compatible_atlas": true
+    },
+    {
+      "group": "exterior",
+      "resolution": 1024,
+      "objects": 1,
+      "seconds": 0.0,
+      "reused_compatible_atlas": true
+    }
+  ],
+  "foliage_vertex_colors": {
+    "samples": 1114728,
+    "linear_mean_rgb": [
+      0.007481742184609175,
+      0.009482371620833874,
+      0.0027331900782883167
+    ],
+    "display_transform": "AgX Medium High Contrast baked",
+    "smoothing": "Shared-position vertex averaging, four local adjacency passes; no colour bleeding between disconnected leaves"
+  },
+  "export_meshes": 8,
+  "polygons_before_triangulation": 419082,
+  "triangles": 846371,
+  "compression": {
+    "format": "Draco",
+    "position_bits": 18,
+    "uv_bits": 16,
+    "color_bits": 12
+  },
+  "collision_obstacles": [],
+  "glb_bytes": 12258004,
+  "export_overlap_cleanup": {
+    "contained_jog": 110,
+    "curve_front_cap": 96
+  },
+  "geometry_validation": {
+    "status": "passed",
+    "decoded_floor_corner_max_error_m": 9.153720746015142e-06,
+    "decoded_floor_corner_errors_m": [
+      6.26979969997997e-06,
+      5.775245315257932e-06,
+      4.3250181858180825e-06,
+      5.952229152279303e-06,
+      7.6162014970987275e-06,
+      8.892469938889095e-06,
+      9.153720746015142e-06,
+      7.20796693799746e-06
+    ],
+    "decoded_tabletop_bounds_blender_m": [
+      [
+        0.5699999928474426,
+        1.9500014781951904,
+        0.9046703577041626
+      ],
+      [
+        1.9700000286102295,
+        2.6000001430511475,
+        0.9500013589859009
+      ]
+    ],
+    "decoded_equipment_bounds_blender_m": [
+      [
+        0.6815999746322632,
+        2.0500004291534424,
+        0.949999988079071
+      ],
+      [
+        1.8583999872207642,
+        2.5404000282287598,
+        1.0797005891799927
+      ]
+    ],
+    "room_unit_scale": "1metre preserved",
+    "boundsThree": {
+      "min": [
+        -5.912499904632568,
+        -0.39999985694885254,
+        -6.893199920654297
+      ],
+      "max": [
+        9.087499618530273,
+        7.800009727478027,
+        0.11999988555908203
+      ]
+    },
+    "overall_bounds_include_exterior": true,
+    "solid_body_expected_bounds_m": [
+      [
+        0.635,
+        1.905
+      ],
+      [
+        1.99,
+        2.565
+      ],
+      [
+        0,
+        0.905
+      ]
+    ],
+    "solid_body_corner_max_error_m": 0.002977722224662072,
+    "closed_door_expected_bounds_m": [
+      [
+        1.16,
+        1.96
+      ],
+      [
+        -0.02,
+        0.02
+      ],
+      [
+        0,
+        2.04
+      ]
+    ],
+    "closed_door_corner_max_error_m": 0.0070583291961482005
+  },
+  "revision": "Solid concrete booth body and closed entrance, 28 October2026",
+  "cache_provenance": {
+    "architecture": "Fresh2048px bake from the cleaned closed-door geometry during this revision, reused unchanged in final export.",
+    "booth": "Fresh2048px bake after the solid body and concealed cladding rebate were finalised.",
+    "foliage": "Fresh vertex lighting, followed by shared-position averaging and four smoothing passes.",
+    "equipment_plants_decor_exterior": "Compatible unchanged geometry/UV atlases reused from previous export; minor indirect-light changes from the closed door/solid body are not rebaked on these unchanged surfaces."
+  },
+  "native_evidence": [
+    "outputs/room-proposed.png",
+    "outputs/room-behind.png",
+    "outputs/room-slab-detail.png",
+    "outputs/room-cutaway.png"
+  ]
+}
