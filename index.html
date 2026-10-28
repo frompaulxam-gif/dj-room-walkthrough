@@ -1,0 +1,47 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover">
+  <meta name="theme-color" content="#171717">
+  <title>DJ room · walk through</title>
+  <meta name="description" content="Explore the proposed DJ room at human scale, with working measurements and fuller planting.">
+  <link rel="stylesheet" href="./style.css">
+  <script type="importmap">{"imports":{"three":"./vendor/three.module.js"}}</script>
+</head>
+<body>
+  <main id="app">
+    <canvas id="room" tabindex="0" aria-label="Interactive three dimensional DJ room. Use W A S D to walk and drag to look around."></canvas>
+    <header class="topbar">
+      <div class="identity"><strong>DJ room</strong><span>walk through</span></div>
+      <div class="actions">
+        <a class="pdf-link" href="./dj-room-model-guide.pdf" target="_blank" rel="noopener">pdf</a>
+        <button id="measure" aria-expanded="false" aria-controls="measure-panel">measurements</button>
+        <button id="fullscreen" aria-label="Enter full screen" title="Full screen"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M8 3H3v5M16 3h5v5M21 16v5h-5M8 21H3v-5"/></svg></button>
+      </div>
+    </header>
+    <div id="loading" class="loading" role="status" aria-live="polite"><span>loading the room</span><progress id="load-progress" max="100"></progress><small>lighting, materials and plants</small></div>
+    <div id="error" class="error" role="alert" hidden><strong>the room couldn’t load</strong><p id="error-message"></p><button onclick="location.reload()">try again</button></div>
+    <div id="crosshair" aria-hidden="true" hidden></div>
+    <aside id="measure-panel" hidden aria-label="Room measurements">
+      <div class="panel-heading"><h1>working dimensions</h1><button id="close-measure" aria-label="Close measurements">×</button></div>
+      <svg id="plan" viewBox="0 0 304 370" role="img" aria-label="To scale room plan with booth and your current position"></svg>
+      <dl class="dimensions"><div><dt>room width</dt><dd>100 in <span>2.540 m</span></dd></div><div><dt>working depth</dt><dd>133 in <span>3.378 m</span></dd></div><div><dt>maximum ceiling</dt><dd>115 in <span>2.921 m</span></dd></div><div><dt>booth</dt><dd>140 × 65 × 95 cm</dd></div><div><dt>behind booth to sill</dt><dd>57.3 cm</dd></div></dl>
+      <details><summary>what is estimated?</summary><p>Your room measurements set the scale. The 119 in wall is modelled as 118 in so it closes against the 133 in overall depth.</p><p>The window, wall curve and fittings are photo estimates. The booth dimensions are a proposed fit. Walking uses a 40 cm body width; real shoulder clearance varies.</p><p>The two players and mixer use the published CDJ-3000X and DJM-V10-LF dimensions. Two 25 mm gaps give a total width of 117.68 cm.</p><p>The room is a working mockup, not a measured site survey.</p></details>
+      <details><summary>materials and view</summary><label class="height-control view-control" for="view-angle">view angle <output id="view-output">80°</output><input id="view-angle" type="range" min="60" max="80" step="1" value="80"></label><p id="view-description">80° vertically. The camera view changes; the room dimensions stay fixed.</p><p>This is a wider perspective view at your chosen eye height. A flat screen cannot reproduce the full experience of looking around in person.</p><p>Warm lighting and concrete textures are baked from the Blender scene for a smooth walkthrough. Reflections and fine details are simplified compared with the still render.</p><p>Concrete scan: <a href="https://polyhaven.com/a/granular_concrete" target="_blank" rel="noopener">Poly Haven · Granular Concrete</a>, CC0, Dario Barresi and Michael Jenkins. Viewer uses Three.js (MIT).</p></details>
+    </aside>
+    <div class="bottom-ui">
+      <div id="look-hint" class="hint">drag to look · W A S D to move · esc to release mouse</div>
+      <nav class="toolbar" aria-label="Walkthrough controls">
+        <div class="views"><button id="entrance" disabled>entrance</button><button id="behind" disabled>behind decks</button></div>
+        <label class="height-control" for="eye-height">eye height <output id="height-output">1.65 m</output><input id="eye-height" type="range" min="1.45" max="1.85" step="0.01" value="1.65"></label>
+        <button id="walk" class="primary" disabled>walk around</button>
+      </nav>
+    </div>
+    <div id="touch-pad" aria-label="Movement controls"><button data-move="forward" aria-label="Walk forward">↑</button><button data-move="left" aria-label="Move left">←</button><button data-move="back" aria-label="Walk backwards">↓</button><button data-move="right" aria-label="Move right">→</button></div>
+    <div id="notice" role="status" aria-live="polite"></div>
+    <noscript>This walkthrough needs JavaScript enabled to display the room.</noscript>
+  </main>
+  <script type="module" src="./app.js"></script>
+</body>
+</html>
